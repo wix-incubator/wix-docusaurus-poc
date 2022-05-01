@@ -10,34 +10,32 @@ import Examples from '../../../Examples';
 import DocsMarkdownDisplay from '../../../DocsMarkdownDisplay';
 import OperationTables from './OperationTables';
 
-const opeartionMock = require('@site/mocks/create-cart.json');
-const openApi = require('@site/mocks/open-api.json');
-
-
 interface OperationProps {
   operation: DocsOperationObject;
   source: string;
   operationId: string;
 }
 
-export default function Operation({ source, operationId, operation }: OperationProps) {
+export default function Operation({ source, operationId }: OperationProps) {
   const exampleContent = [
     { title: 'example 1', description, examples },
     { title: 'example 2', examples },
     { title: 'example 3', examples: [{ markdown }] },
   ];
 
-  // const [operation, setOperation] = useState<any>();
-  // useEffect(() => {
-  //   axios.get(`https://fakestoreapi.com/products?source=${source}&operationId=${operationId}`).then(res => {
-  //     if (res.status === 200) {
-  //       setOperation(opeartionMock)
-  //     }
-  //   })
-  // }, [])
+  const [openApi, setOpenApi] = useState<any>();
+  const [operation, setOperation] = useState<any>();
 
+  useEffect(() => {
+    axios.post(`http://localhost:8080/api/get-operation`,
+      { source, operationId }
+    ).then(({data}) =>{
+      console.log({ data })
+      setOpenApi(data.schema)
+      setOperation(data.operation)
+    })
+  }, [])
 
-  console.log({ operation })
   return operation ? (
     <OpenApiContentProvider>
       {/* <Divider id={operation?.contentLink.slugifyName} /> */}

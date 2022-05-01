@@ -1,0 +1,22 @@
+.subtitle{
+  margin-bottom: 8px;
+}
+
+.tableHeader {
+  display: flex;
+  box-sizing: border-box;
+  border: none;
+  padding: 9px 24px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+
+  &.dark {
+    color: var(--d-100);
+    background-color: var(--d-25);
+  }
+
+  &.light {
+    color: var(--d-10);
+    background-color: var(--d-70);
+  }
+}

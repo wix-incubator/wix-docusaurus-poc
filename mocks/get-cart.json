@@ -1,0 +1,34 @@
+{
+  "summary": "Get Cart",
+  "description": "Retrieves a cart.",
+  "operationId": "com.wix.ecom.cart.api.v1.CartService.GetCart",
+  "parameters": [
+      {
+          "name": "id",
+          "in": "path",
+          "description": "Cart ID.",
+          "required": true
+      }
+  ],
+  "responses": {
+      "200": {
+          "description": "",
+          "$ref": "#/components/schemas/com.wix.ecom.cart.api.v1.GetCartResponse"
+      }
+  },
+  "deprecated": false,
+  "x-wix-api": {
+      "triggeredEvents": [],
+      "rpcMethodDetails": {
+          "requestMessage": "com.wix.ecom.cart.api.v1.GetCartRequest",
+          "responseMessage": "com.wix.ecom.cart.api.v1.GetCartResponse"
+      }
+  },
+  "httpMethod": "get",
+  "rpcOnly": false,
+  "path": "/v1/carts/{id}",
+  "contentLink": {
+      "displayName": "Get Cart",
+      "slugifyName": "get-cart"
+  }
+}

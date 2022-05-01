@@ -1,0 +1,21 @@
+.flexDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyCode {
+  padding: 6px;
+}
+
+.copyTextButton {
+  margin-left: 6px;
+
+  &.dark {
+    color: var(--b-30);
+  }
+
+  &.light {
+    color: var(--b-10);
+  }
+}

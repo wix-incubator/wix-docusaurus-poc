@@ -1,0 +1,41 @@
+.form-buttons {
+
+  font-size: 14px;
+  display: flex;
+  float: right;
+}
+
+.cancel-button {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &.dark {
+    color: var(--b-30);
+  }
+
+  &.light {
+    color: var(--b-10);
+  }
+}
+
+.send-button {
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 6px 14px 6px 14px;
+  color: var(--d-100);
+
+  &.dark {
+    background-color: var(--b-20);
+  }
+
+  &.light {
+    background-color: var(--b-10);
+  }
+
+  &.disabled {
+    cursor: default;
+    background-color: var(--d-60);
+  }
+}

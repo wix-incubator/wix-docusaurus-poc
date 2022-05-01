@@ -1,0 +1,14 @@
+@import '../../../../../../sass/mixins';
+
+@include endpoint();
+@include tryItOut();
+
+.highlightedSignature {
+  white-space: pre;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+  overflow-x: auto;
+
+  @include hiddenScrollBar();
+}

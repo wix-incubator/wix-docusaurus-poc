@@ -1,0 +1,34 @@
+.paragraph {
+
+  flex-flow: nowrap;
+  line-height: 1.5;
+  font-size: 16px;
+
+  &.dark {
+    color: var(--d-70);
+  }
+
+  &.light {
+    color: var(--d-20);
+  }
+
+  &.tiny{
+    font-size: 12px;
+  }
+
+  &.small{
+    font-size: 14px;
+  }
+
+  &.medium{
+    font-size: 16px;
+  }
+
+  &.large{
+    font-size: 18px;
+  }
+
+  &.bold{
+    font-weight: bold;
+  }
+}

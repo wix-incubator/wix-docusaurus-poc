@@ -1,0 +1,13 @@
+
+.link {
+
+  display: inline-flex;
+
+  &.dark {
+    color: var(--b-30);
+  }
+
+  &.light {
+    color: var(--b-10);
+  }
+}

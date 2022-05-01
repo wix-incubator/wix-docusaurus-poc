@@ -1,0 +1,206 @@
+@import './vars';
+
+%linkTransition {
+  transition: color 150ms linear !important;
+  &:hover {
+    &.dark {
+      color: var(--b-30);
+    }
+    &.light {
+      color: var(--b-10);
+    }
+  }
+  &:active {
+    &.dark {
+      color: rgba(var(--d-25), 0.8);
+    }
+    &.light {
+      color: rgba(var(--b-10), 0.8);
+    }
+  }
+}
+
+@mixin endpoint() {
+  .endpoint {
+
+    display: flex;
+    width: 100%;
+    height: 42px;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 24px;
+
+    &.dark {
+      color: var(--d-100);
+      background-color: var(--d-25);
+      border: solid 1px var(--d-30);
+    }
+
+    &.light {
+      color: var(--d-10);
+      background-color: var(--d-70);
+      border: solid 1px var(--d-65);
+    }
+  }
+}
+
+@mixin hiddenScrollBar() {
+  /* In order to hide the scrollbar */
+  -ms-overflow-style: none; // Internet Explorer 10+
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; //Safari and Chrome
+  }
+}
+
+@mixin tryItOut() {
+  .tryItOut {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 76px;
+    min-width: 76px;
+    font-size: 12px;
+    height: 22px;
+    margin-right: 12px;
+    margin-left: 12px;
+    border-radius: 15px;
+    border: solid 1px var(--b-10);
+    background-color: var(--b-10);
+    color: var(--d-100);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--b-00);
+    }
+  }
+}
+
+$depth-offset: 30px;
+
+@mixin animateTable($margin, $op: 1) {
+  transform: translateX($margin);
+  opacity: $op;
+}
+
+@mixin tableDepthClasses($depth) {
+  @for $i from 1 through $depth {
+    .depth-#{$i} {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 150ms ease-in, transform 150ms ease-in 125ms;
+      width: calc(100% - #{$depth-offset});
+      margin-bottom: 6px;
+      margin-top: 6px;
+
+      &.animate {
+        @include animateTable($depth-offset);
+      }
+    }
+  }
+}
+
+@mixin default-scroll-bar(
+  $width: 18px,
+  $background-color: var(--d-100),
+  $thumb-color: var(--b-60),
+  $thumb-hover-color: var(--b-50),
+  $thumb-active-color: var(--b-40),
+  $corner-color: var(--d-100),
+  $background-hover-color: var(--d-100),
+) {
+
+  &::-webkit-scrollbar {
+    width: $width;
+    background-color: $background-color;
+
+    &:horizontal {
+      border-radius: 0 0 6px 6px;
+    }
+    &:vertical{
+      border-radius: 0 0 6px 0px;
+    }
+  }
+  &::-webkit-scrollbar:hover {
+    background-color: $background-hover-color;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: $corner-color;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    /* https://stackoverflow.com/a/16829330/5343330 */
+    background-color: $thumb-color;
+    background-clip: content-box;
+    border-radius: 5px * 2; // we need to double border-radius to receive 5px
+    border: 5px solid transparent; // for width emulation
+    height: 72px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $thumb-hover-color;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background-color: $thumb-active-color;
+  }
+}
+
+@mixin http-colors() {
+  &.put{
+    color: var(--y-10);
+  }
+  &.get{
+    color: var(--b-10);
+  }
+  &.post{
+    color: var(--g-10);
+  }
+  &.delete{
+    color: var(--r-10);
+  }
+  &.options{
+    color: var(--b-00);
+  }
+  &.head{
+    color: var(--p-10);
+  }
+  &.patch{
+    color: var(--t-10);
+  }
+  &.trace{
+    color: var(--b-10);
+  }
+}
+
+@mixin http-colors-background() {
+  &.put{
+    background-color: var(--y-10);
+  }
+  &.get{
+    background-color: var(--b-10);
+  }
+  &.post{
+    background-color: var(--g-10);
+  }
+  &.delete{
+    background-color: var(--r-10);
+  }
+  &.options{
+    background-color: var(--b-00);
+  }
+  &.head{
+    background-color: var(--p-10);
+  }
+  &.patch{
+    background-color: var(--t-10);
+  }
+  &.trace{
+    background-color: var(--b-10);
+  }
+}

@@ -1,0 +1,18 @@
+
+.operation{
+  width: calc(100vw - 400px);
+  display: flex;
+}
+
+.operationContent{
+  width: 60%;
+  padding-right: 45px;
+}
+
+.operationExamples{
+  width: 40%;
+  overflow: hidden;
+  position: sticky;
+  align-self: self-start;
+  top: 0;
+}

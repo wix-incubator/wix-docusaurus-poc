@@ -1,0 +1,58 @@
+.feedback-modal {
+  max-width: 640px;
+  max-height: 100%;
+  overflow: auto;
+  padding: 32px 54px 54px 54px;
+  border-radius: 6px;
+  display: block;
+
+  &.dark {
+    border: 1px solid var(--d-10);
+    background-color: var(--d-20);
+  }
+
+  &.light {
+    background-color: var(--d-100);
+  }
+}
+
+.heading-wrapper {
+  justify-content: center;
+  text-align: center;
+}
+
+.cancel-button {
+  display: flex;
+  float: right;
+  cursor: pointer;
+
+  &.dark {
+    color: var(--b-30);
+  }
+
+  &.light {
+    color: var(--b-10);
+  }
+}
+
+.face {
+  width: 54px;
+  height: 54px;
+
+  &.yes {
+    color: var(--t-10);
+  }
+
+  &.no {
+    color: var(--r-10);
+  }
+}
+
+.text-area {
+  margin-top: 25px;
+}
+
+.input {
+  height: 90px;
+  margin: 25px 0 30px;
+}

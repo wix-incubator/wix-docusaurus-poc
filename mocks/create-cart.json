@@ -1,0 +1,91 @@
+{
+  "summary": "Create Cart",
+  "description": "Creates a new cart.",
+  "operationId": "com.wix.ecom.cart.api.v1.CartService.CreateCart",
+  "parameters": [],
+  "responses": {
+    "200": {
+      "description": "",
+      "$ref": "#/components/schemas/com.wix.ecom.cart.api.v1.CreateCartResponse"
+    }
+  },
+  "deprecated": false,
+  "requestBody": {
+    "required": true,
+    "content": {
+      "application/json": {
+        "schema": {
+          "type": "object",
+          "title": "CreateCartRequest",
+          "description": "",
+          "properties": {
+            "cartInfo": {
+              "summary": "cartInfo",
+              "description": "Cart info.",
+              "$ref": "#/components/schemas/com.wix.ecom.cart.api.v1.Cart"
+            },
+            "couponCode": {
+              "title": "couponCode",
+              "description": "Code of an existing coupon to apply to cart. For more information, see [Coupons API](https://dev.wix.com/api/rest/wix-coupons/coupons/introduction).",
+              "type": "string"
+            },
+            "merchantDiscounts": {
+              "title": "merchantDiscounts",
+              "description": "Merchant discounts to apply to specific line items or the entire cart.",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/com.wix.ecom.totals_calculator.v1.MerchantDiscountInput"
+              }
+            },
+            "lineItems": {
+              "title": "lineItems",
+              "description": "Catalog line items.",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/com.wix.ecom.cart.api.v1.LineItem"
+              }
+            },
+            "customLineItems": {
+              "title": "customLineItems",
+              "description": "Custom line items.",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/com.wix.ecom.checkout.api.v1.CustomLineItem"
+              }
+            }
+          },
+          "deprecated": false,
+          "required": [
+            "lineItems.catalogReference"
+          ]
+        }
+      }
+    }
+  },
+  "x-wix-api": {
+    "triggeredEvents": [{
+      "title": "Cart Created",
+      "description": "",
+      "permissions": [
+        "ECOM.READ_CARTS"
+      ],
+      "exposure": "PUBLIC",
+      "maturity": "ALPHA",
+      "slug": "created",
+      "eventTopic": "domain_events_wix.ecom.v1.cart",
+      "serviceName": "com.wix.ecom.cart.api.v1.CartService",
+      "domainEvent": "CREATED"
+    }],
+    "rpcMethodDetails": {
+      "requestMessage": "com.wix.ecom.cart.api.v1.CreateCartRequest",
+      "responseMessage": "com.wix.ecom.cart.api.v1.CreateCartResponse"
+    }
+  },
+  "httpMethod": "post",
+  "rpcOnly": false,
+  "path": "/v1/carts",
+  "contentLink": {
+    "displayName": "Create Cart",
+    "slugifyName": "create-cart"
+  }
+}

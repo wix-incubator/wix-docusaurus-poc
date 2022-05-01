@@ -1,0 +1,51 @@
+.responseButton {
+  padding: 3px 6px;
+  border-radius: 15px;
+  margin-left: 7px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+
+  &.dark {
+    border: solid 1px var(--b-30);
+    color: var(--b-30);
+  }
+
+  &.light {
+    border: solid 1px var(--b-10);
+    color: var(--b-10);
+  }
+
+  &.yesSelected {
+    border: solid 1px var(--t-10);
+    background-color: var(--t-10);
+    color: var(--d-100);
+  }
+
+  &.yes:hover {
+    border: solid 1px var(--t-10);
+    background-color: var(--t-10);
+  }
+
+  &.noSelected {
+    border: solid 1px var(--r-10);
+    background-color: var(--r-10);
+    color: var(--d-100);
+  }
+
+  &.no:hover {
+    border: solid 1px var(--r-10);
+    background-color: var(--r-10);
+  }
+}
+
+.responseButton:hover {
+  color: var(--d-100);
+}
+
+.face {
+  width: 20px;
+  height: 20px;
+}
+

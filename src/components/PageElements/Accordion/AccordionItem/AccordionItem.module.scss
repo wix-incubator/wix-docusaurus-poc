@@ -1,0 +1,24 @@
+.title {
+
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+  border-radius: 6px;
+
+  &.dark {
+    color: var(--d-100);
+    background-color: var(--d-25);
+  }
+
+  &.light {
+    color: var(--d-10);
+    background-color: var(--d-70);
+  }
+}
+
+.accordionItem {
+  margin-top: 1px;
+}

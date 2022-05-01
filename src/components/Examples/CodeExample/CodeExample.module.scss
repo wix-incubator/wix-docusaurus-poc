@@ -1,0 +1,39 @@
+@import '../../../sass/_mixins';
+
+.flexDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px 0 18px;
+
+  color: var(--d-100);
+  background-color: var(--d-25);
+
+  &.dark {
+    border-radius:  6px 6px 0 0;
+  }
+}
+
+.code {
+  overflow: auto;
+  padding: 16px;
+  background-color: var(--d-10) !important;
+
+  &.dark {
+    @include default-scroll-bar(18px, var(--d-10), var(--b-60), var(--b-50), var(--b-40), var(--d-10), var(--d-10));
+  }
+
+  &.light {
+    @include default-scroll-bar(18px, var(--d-25), var(--b-60), var(--b-50), var(--d-35), var(--d-25), var(--d-25));
+  }
+}

@@ -1,0 +1,81 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --d-10: #040d23;
+  --d-20: #22293b;
+  --d-30: #444856;
+  --d-40: #6e7382;
+  --d-65: #dadce1;
+  --d-70: #f2f3f4;
+  --d-80: #dfe5eb;
+  --d-100: #fff;
+  --b-00: #0448cf;
+  --b-10: #0059ff;
+  --b-20: #669bff;
+  --b-30: #8cb4ff;
+  --b-40: #b2cdff;
+  --b-50: #ccdeff;
+  --b-60: #13233f;
+  --b-70: #e5eeff;
+  --b-75: #f2f6ff;
+  --g-10: #46d895;
+  --g-70: #ecfbf4;
+  --t-10: #00ceab;
+  --t-70: #ecfaf9;
+  --y-10: #eda200;
+  --y-70: #fff6d1;
+  --r-10: #ee5951;
+  --r-70: #ffe2e2;
+  --p-10: #8700ff;
+  --p-70: #efdcff;
+  --o-00: #ea5f0e;
+  --o-70: #ffb980;
+  --d-60: #c0c5ce;
+  --d-25: #303649;
+  --d-35: #d6e6ff;
+  --spacing-xxs: 6px;
+  --spacing-xs: 12px;
+  --spacing-s: 18px;
+  --spacing-m: 24px;
+  --spacing-l: 30px;
+  --spacing-xl: 36px;
+  --spacing-xxl: 42px;
+  --spacing-xxl-2: 48px;
+  --spacing-xxl-3: 54px;
+  --spacing-xxl-4: 60px;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}

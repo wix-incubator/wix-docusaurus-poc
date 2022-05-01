@@ -1,0 +1,29 @@
+.metadataBox {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 6px;
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+
+  &.dark {
+    color: var(--d-70);
+    background-color: var(--d-30);
+  }
+
+  &.light {
+    color: var(--d-20);
+    background-color: var(--d-70);
+  }
+
+  .metadataBoxTitle {
+    font-weight: bold;
+    display: inline-flex;
+    padding-right: 4px;
+  }
+  .metadataBoxText{
+    display: inline-flex;
+  }
+}

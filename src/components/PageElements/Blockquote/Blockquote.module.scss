@@ -1,0 +1,13 @@
+
+.blockquote {
+
+  margin: 0;
+  padding-left: 17px;
+
+  border-left: 3px solid var(--t-10);
+
+  &.important {
+    border-left: 3px solid var(--y-10) !important;
+  }
+
+}

@@ -1,0 +1,8 @@
+@import '../../../sass/mixins';
+
+.tableWrapper {
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+@include tableDepthClasses(8);

@@ -1,0 +1,66 @@
+.descriptionWrapper{
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  &.light {
+    &:not(.singleExample) {
+      color: var(--d-100);
+      background-color: var(--d-25);
+      border-top: 1px solid var(--d-30);
+      border-bottom: 1px solid var(--d-30);
+    }
+  }
+  
+  &.dark {
+    border-radius: 6px 6px 0 0;
+  }
+
+  &.singleExample {
+    padding-left: 0;
+  }
+
+  > p {
+    margin: 0;
+  }
+}
+
+.description {
+  &:not(.singleExample) {
+    &.light {
+      color: var(--d-100);
+      background-color: var(--d-25);
+    } 
+  }
+  
+  &.dark {
+    color: var(--d-100);
+  }
+}
+
+.codeExampleWrapper {
+  &.light {
+    &:last-of-type {
+      pre {
+        border-radius: 0 0 6px 6px;
+      }
+    }
+  
+    &:not(:last-of-type) {
+      pre {
+        &::-webkit-scrollbar {
+          &:horizontal {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+  
+  &.dark {
+    pre {
+      border-radius: 0 0 6px 6px;
+    }
+  }  
+}

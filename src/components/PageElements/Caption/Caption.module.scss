@@ -1,0 +1,56 @@
+.caption {
+
+  display: inline-flex;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.83px;
+  text-transform: uppercase;
+
+  &.lowercase{
+    text-transform: lowercase;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.red {
+    color: var(--r-10);
+  }
+
+  &.turquoise {
+    color: var(--t-10);
+  }
+
+  &.green {
+    color: var(--g-10);
+  }
+
+  &.blue {
+    color: var(--b-10);
+  }
+
+  &.darkBlue {
+    color: var(--b-00);
+  }
+
+  &.yellow {
+    color: var(--y-10);
+  }
+
+  &.purple {
+    color: var(--p-10);
+  }
+
+  &.orange {
+    color: var(--o-00);
+  }
+
+  &.gray {
+    color: var(--d-30);
+
+    &.dark{
+      color: var(--d-65);
+    }
+  }
+}

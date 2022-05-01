@@ -1,0 +1,9 @@
+.tableCell {
+  &.dark {
+    color: var(--d-100);
+  }
+
+  &.light {
+    color: var(--d-10);
+  }
+}

@@ -1,0 +1,31 @@
+.nameWrapper {
+  display: flex;
+  align-items: center;
+
+  .iconContainer {
+    text-align: center;
+    box-sizing: border-box;
+    height: 18px;
+  }
+
+  .empty {
+    padding-top: 0;
+  }
+
+  .chevronIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: -3px;
+    cursor: pointer;
+    transition: transform 100ms linear;
+
+    &.dark {
+      color: var(--d-100);
+    }
+
+    &.light {
+      color: var(--d-10);
+    }
+  }
+}

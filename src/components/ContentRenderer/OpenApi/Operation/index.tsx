@@ -29,7 +29,7 @@ export default function Operation({ source, operationId }: OperationProps) {
   useEffect(() => {
     axios.post(`http://localhost:8080/api/get-operation`,
       { source, operationId }
-    ).then(({data}) =>{
+    ).then(({ data }) => {
       console.log({ data })
       setOpenApi(data.schema)
       setOperation(data.operation)
@@ -37,39 +37,39 @@ export default function Operation({ source, operationId }: OperationProps) {
   }, [])
 
   return operation ? (
-    <OpenApiContentProvider>
-      {/* <Divider id={operation?.contentLink.slugifyName} /> */}
-      <div
-        data-hook={`operation-${operation?.contentLink?.slugifyName}`}
-        id={operation?.contentLink.slugifyName}
-        className={s.operation}
-      >
-        <div data-hook="operation-content" className={s.operationContent}>
-          {/* <div>
+      <OpenApiContentProvider>
+        {/* <Divider id={operation?.contentLink.slugifyName} /> */}
+        <div
+          data-hook={`operation-${operation?.contentLink?.slugifyName}`}
+          id={operation?.contentLink.slugifyName}
+          className={s.operation}
+        >
+          <div data-hook="operation-content" className={s.operationContent}>
+            {/* <div>
             <Heading size="h2">{operation.summary}</Heading>
           </div> */}
-          {operation.description && (
-            <DocsMarkdownDisplay markdown={operation.description!} />
-          )}
-          {/* TODO: Pass relevant metadata */}
-          <MetadataBox
-            infoMap={{
-              Artifact: 'com.wix.ecom.orders',
-              Service: 'OrdersService',
-            }}
-          />
-          <RpcRestSyntax operation={operation} servers={openApi.servers} />
-          <OperationTables operation={operation} components={openApi.components} />
-          <WasItHelpful />
+            {operation.description && (
+              <DocsMarkdownDisplay markdown={operation.description!} />
+            )}
+            {/* TODO: Pass relevant metadata */}
+            <MetadataBox
+              infoMap={{
+                Artifact: 'com.wix.ecom.orders',
+                Service: 'OrdersService',
+              }}
+            />
+            <RpcRestSyntax operation={operation} servers={openApi.servers} />
+            <OperationTables operation={operation} components={openApi.components} />
+            <WasItHelpful />
+          </div>
+          <div className={s.operationExamples}>
+            {/* TODO: pass relevant examples from OpenAPI */}
+            <Examples
+              examplesContent={exampleContent}
+            />
+          </div>
         </div>
-        <div className={s.operationExamples}>
-          {/* TODO: pass relevant examples from OpenAPI */}
-          <Examples
-            examplesContent={exampleContent}
-          />
-        </div>
-      </div>
-    </OpenApiContentProvider>
+      </OpenApiContentProvider>
   ) : <div>Loading Operation...</div>
 }
 
